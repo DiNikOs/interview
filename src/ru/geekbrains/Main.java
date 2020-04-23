@@ -6,6 +6,9 @@
  */
 
 package ru.geekbrains;
+
+import ru.geekbrains.hw1.part1.*;
+import ru.geekbrains.hw1.part1.Person;
 //Создать builder для класса Person со следующими полями: String firstName, String lastName,
 //        String middleName, String country, String address, String phone, int age, String gender.
 

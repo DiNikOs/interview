@@ -5,18 +5,9 @@
  * @version v1.0
  */
 
-package ru.geekbrains;
+package ru.geekbrains.hw1.part1;
 
-class FirstName  {}
-class MiddleName {}
-class LastName   {}
-class Country    {}
-class Address    {}
-class Phone      {}
-class Age        {}
-class Gender     {}
-
-class Person {
+public class Person {
     FirstName firstName;
     MiddleName middleName;
     LastName lastName;
@@ -27,14 +18,14 @@ class Person {
     Gender gender;
 
     public static class Builder {
-        private FirstName firstName;
-        private MiddleName middleName;
-        private LastName lastName;
-        private Country country;
-        private Address address;
-        private Phone phone;
-        private Age age;
-        private Gender gender;
+        protected FirstName firstName;
+        protected MiddleName middleName;
+        protected LastName lastName;
+        protected Country country;
+        protected Address address;
+        protected Phone phone;
+        protected Age age;
+        protected Gender gender;
 
         public Builder addFirstName(FirstName firstName) {
             this.firstName = firstName;
