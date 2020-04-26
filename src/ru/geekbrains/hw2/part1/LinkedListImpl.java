@@ -9,7 +9,7 @@ package ru.geekbrains.hw2.part1;
 
 public class LinkedListImpl<E> implements LinkedList<E> {
 
-    protected Entry<E> firstElement;//001[005]
+    protected Entry<E> firstElement;
     protected Entry<E> lastElement;
     protected int size;
     protected int count = 0;
