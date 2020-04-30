@@ -9,6 +9,11 @@ package ru.geekbrains;
 
 import ru.geekbrains.hw1.part1.*;
 import ru.geekbrains.hw1.part3.*;
+import ru.geekbrains.hw3.part1.Ping;
+import ru.geekbrains.hw3.part1.Pong;
+import ru.geekbrains.hw3.part1.SyncQueue;
+import ru.geekbrains.hw3.part2.Counter;
+import ru.geekbrains.hw3.part2.LockExample;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +22,7 @@ import java.util.List;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException{
         Person person = new Person.Builder().
                 addFirstName(new FirstName()).
                 addMiddleName(new MiddleName()).
@@ -45,6 +50,45 @@ public class Main {
             shape.erase();
         }
         System.out.println("===execution completed_2===");
+
+        System.out.println("==============Less3 start==============");
+        System.out.println("===Part1===");
+        SyncQueue syncQueue = new SyncQueue();
+        new Ping(syncQueue);
+        new Pong(syncQueue);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            Thread.currentThread().interrupt();
+        }
+        System.out.println("===Part2===");
+        Counter counter = new Counter();
+        LockExample lockExample = new LockExample(counter);
+        for (int i = 0; i < 5; i++) {
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    for (int j = 0; j < 2; j++) {
+                        lockExample.run();
+                    }
+                }
+            }).start();
+        }
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+        }
+
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            System.out.println("Less3 stop");
+            System.exit(0);
+        }
     }
 }
 
