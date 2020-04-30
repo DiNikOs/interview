@@ -50,7 +50,7 @@ public class Main {
             shape.erase();
         }
         System.out.println("===execution completed_2===");
-
+//************************************************
         System.out.println("==============Less3 start==============");
         System.out.println("===Part1===");
         SyncQueue syncQueue = new SyncQueue();
@@ -63,6 +63,7 @@ public class Main {
         } finally {
             Thread.currentThread().interrupt();
         }
+//************************************************
         System.out.println("===Part2===");
         Counter counter = new Counter();
         LockExample lockExample = new LockExample(counter);
