@@ -99,4 +99,14 @@ public class StudentDaoImpl implements StudentDAO{
                 openSession().createQuery("FROM " + Student.class.getSimpleName()).list();
         return students;
     }
+
+    public void saveAllStudents(List<Student> students) {
+        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
+        for (Student student: students) {
+            session.save(student);
+        }
+        tx1.commit();
+        session.close();
+    }
 }

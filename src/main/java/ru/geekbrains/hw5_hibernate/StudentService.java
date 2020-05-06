@@ -29,6 +29,10 @@ public class StudentService {
         studentDao.save(student);
     }
 
+    public void saveAllStudent(List<Student> students) {
+        studentDao.saveAllStudents(students);
+    }
+
     public void deleteStudent(Student student) {
         studentDao.delete(student);
     }

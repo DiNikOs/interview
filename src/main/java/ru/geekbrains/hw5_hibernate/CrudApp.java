@@ -7,6 +7,7 @@
 
 package ru.geekbrains.hw5_hibernate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CrudApp {
@@ -22,10 +23,13 @@ public class CrudApp {
         System.out.println("============\n== CREATE ==\n============");
         System.out.println("Before save: students= " + studentService.findAllStudent().size());
         if(studentService.findAllStudent().size()<1000) {
+            List<Student> students = new ArrayList<>();
             for (int i = 0; i < 1000; i++) {
-                Student newStudent = new Student("Student" + i, rand.random(5));
-                studentService.saveStudent(newStudent);
+                students.add(new Student("Student" + i, rand.random(5)));
+//                Student newStudent = new Student("Student" + i, rand.random(5));
+//                studentService.saveStudent(newStudent);
             }
+            studentService.saveAllStudent(students);
         }
         System.out.println("After save and commit: students= " + studentService.findAllStudent().size());
 
