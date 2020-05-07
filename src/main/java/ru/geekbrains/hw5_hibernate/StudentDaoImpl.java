@@ -39,13 +39,16 @@ public class StudentDaoImpl implements StudentDAO{
     }
 
     @Override
-    @Transactional
     public Student findById(Long id) {
-        return HibernateSessionFactory.getSessionFactory().openSession().get(Student.class, id);
+        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
+        Student student = session.get(Student.class, id);
+        tx1.commit();
+        session.close();
+        return student;
     }
 
     @Override
-    @Transactional
     public void save(Student student) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
@@ -55,7 +58,6 @@ public class StudentDaoImpl implements StudentDAO{
     }
 
     @Override
-    @Transactional
     public void update(Student student) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
@@ -65,7 +67,6 @@ public class StudentDaoImpl implements StudentDAO{
     }
 
     @Override
-    @Transactional
     public void delete(Student student) {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
@@ -74,7 +75,6 @@ public class StudentDaoImpl implements StudentDAO{
         session.close();
     }
 
-    @Transactional
     public int deleteAll() {
         Session session = HibernateSessionFactory.getSessionFactory().openSession();
         Transaction tx1 = session.beginTransaction();
@@ -95,8 +95,12 @@ public class StudentDaoImpl implements StudentDAO{
     @Override
     @Transactional
     public List <Student> findAll() {
+        Session session = HibernateSessionFactory.getSessionFactory().openSession();
+        Transaction tx1 = session.beginTransaction();
         List<Student> students = (List<Student>) HibernateSessionFactory.getSessionFactory().
                 openSession().createQuery("FROM " + Student.class.getSimpleName()).list();
+        tx1.commit();
+        session.close();
         return students;
     }
 
