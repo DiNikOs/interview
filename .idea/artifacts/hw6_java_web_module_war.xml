@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="hw6_java_web_module:war">
+    <output-path>$PROJECT_DIR$/hw6_java_web_module/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>hw6_java_web_module</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="java-web-project.war">
+      <element id="artifact" artifact-name="hw6_java_web_module:war exploded" />
+    </root>
+  </artifact>
+</component>
