@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+    <file type="web" url="file://$PROJECT_DIR$/hw6_java_web/target/java-web-project/WEB-INF/web.xml" />
     <type id="jpa" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/hw6_java_web/pom.xml" />
+        <option value="$PROJECT_DIR$/hw6_java_web_module/pom.xml" />
       </list>
     </option>
   </component>
