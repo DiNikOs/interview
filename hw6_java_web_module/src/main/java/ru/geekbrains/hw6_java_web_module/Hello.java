@@ -10,11 +10,12 @@ import java.io.IOException;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-//@WebServlet("/hello") example №3 without web.xml
+//@WebServlet("/hello") // example №3 without web.xml
 public class Hello extends HttpServlet {
 
     private ServletConfig config;
@@ -43,6 +44,7 @@ public class Hello extends HttpServlet {
 //        example №1
 //        PrintWriter pw = resp.getWriter();
 //        pw.println("<H1>Hello World example 1!!!</H1>");
+
 //        example №2
         req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
