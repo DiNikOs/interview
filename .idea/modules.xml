@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/hw6_java_web_module/hw6_java_web_module.iml" filepath="$PROJECT_DIR$/hw6_java_web_module/hw6_java_web_module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hw7_spring/hw7_spring.iml" filepath="$PROJECT_DIR$/hw7_spring/hw7_spring.iml" />
       <module fileurl="file://$PROJECT_DIR$/interview.iml" filepath="$PROJECT_DIR$/interview.iml" />
     </modules>
   </component>
