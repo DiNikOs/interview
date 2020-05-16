@@ -7,7 +7,7 @@
     <groupId>ru.geekbrains</groupId>
     <artifactId>interview</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -76,6 +76,7 @@
 
     <modules>
         <module>hw6_java_web_module</module>
+        <module>hw7_spring</module>
     </modules>
 
     <build>
@@ -85,9 +86,6 @@
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
-                    <configuration>
-                        <url>http://localhost:8080/hello</url>
-                    </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

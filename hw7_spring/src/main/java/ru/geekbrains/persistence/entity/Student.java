@@ -24,10 +24,7 @@ public class Student implements Serializable {
     private String name;
 
     @Column(name = "mark")
-    private int mark;
-
-//    @OneToMany(mappedBy = "Student", cascade = CascadeType.ALL, orphanRemoval = true)
-//    private List<Mark> marks;
+    private int age;
 
     public Long getId() {
         return id;
@@ -45,26 +42,25 @@ public class Student implements Serializable {
         this.name = name;
     }
 
-    public int getMark() {
-        return mark;
+    public int getAge() {
+        return age;
     }
 
-    public void setMark(int mark) {
-        this.mark = mark;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public Student() {
     }
 
-    public Student(String name, int mark) {
+    public Student(String name, int age) {
         this.name = name;
-        this.mark = mark;
-//        marks = new ArrayList<>();
+        this.age = age;
     }
 
     @Override
     public String toString() {
-        return String.format("Student [id = %d, name = %s, mark = %d]", id, name, mark);
+        return String.format("Student [id = %d, name = %s, age = %d]", id, name, age);
     }
 }
 

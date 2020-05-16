@@ -9,16 +9,16 @@
 
 <c:url value="/students/create" var="createStudentUrl" />
 <form action="${createStudentUrl}" method="post">
-    <%-- О --%>
+    <%-- --%>
     <input  name="id" id="id" value="${student.id}" type="hidden">
-<%--        type="hidden"--%>
+    <%-- --%>
     <p>
         <label for="name">Name</label>
         <input type="text" id="name" name="name" value="${student.name}" />
     </p>
     <p>
-        <label for="mark">Mark</label>
-        <input type="text" id="mark" name="mark" value="${student.mark}" />
+        <label for="age">Age</label>
+        <input type="text" id="age" name="age" value="${student.age}" />
     </p>
     <input id="add" type="submit" name="add" value="Sava"/>
 </form>
@@ -26,7 +26,7 @@
 <table border="1">
     <tr>
         <th>Name</th>
-        <th>Mark</th>
+        <th>Age</th>
     </tr>
 
     <c:forEach items="${students}" var="student">
@@ -36,7 +36,7 @@
                 <c:param name="id" value="${student.id}"/>
             </c:url>
             <td>${student.name}</td>
-            <td>${student.mark}</td>
+            <td>${student.age}</td>
 
             <td>
                 <c:url value="/students/edit" var="editStudentUrl" />

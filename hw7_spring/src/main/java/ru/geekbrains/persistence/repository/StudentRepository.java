@@ -12,11 +12,4 @@ import ru.geekbrains.persistence.entity.Student;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
-
-//    Optional<Student> findById(Long id);
-
-//    Student save(Student newInstance);
-//    void update(Student transientObject);
-//    void delete(Student persistentObject);
-//    List<Student> findAll();
 }
